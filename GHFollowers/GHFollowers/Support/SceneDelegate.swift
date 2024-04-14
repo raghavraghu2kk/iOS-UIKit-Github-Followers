@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         configureNavigationBar()
     }
+    }
     
     func createSearchNC() -> UINavigationController {
         let searchVC = SearchVC()
