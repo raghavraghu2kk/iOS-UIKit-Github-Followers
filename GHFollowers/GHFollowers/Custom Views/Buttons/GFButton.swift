@@ -20,11 +20,10 @@ class GFButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(_ backgroundColor : UIColor, _ title : String) {
-        super.init(frame: .zero)
+    convenience init(_ backgroundColor : UIColor, _ title : String) {
+        self.init(frame: .zero)
         self.backgroundColor = backgroundColor
         self.setTitle(title, for: .normal)
-        configure()
     }
     
     private func configure() {
@@ -34,4 +33,8 @@ class GFButton: UIButton {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
+    func set(backgroundColor : UIColor, title : String){
+        self.backgroundColor = backgroundColor
+        setTitle(title, for: .normal)
+    }
 }
