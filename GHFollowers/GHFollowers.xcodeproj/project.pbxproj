@@ -45,6 +45,7 @@
 		4A744BD32BE23DEA00FFA172 /* GFDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A744BD22BE23DEA00FFA172 /* GFDataLoadingVC.swift */; };
 		4A744BD52BE2503F00FFA172 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A744BD42BE2503F00FFA172 /* UIView+Ext.swift */; };
 		4A744BD72BE25BC500FFA172 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A744BD62BE25BC400FFA172 /* UITableView+Ext.swift */; };
+		4A744BDA2BE4A42100FFA172 /* FollowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A744BD92BE4A42100FFA172 /* FollowerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		4A744BD22BE23DEA00FFA172 /* GFDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingVC.swift; sourceTree = "<group>"; };
 		4A744BD42BE2503F00FFA172 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		4A744BD62BE25BC400FFA172 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		4A744BD92BE4A42100FFA172 /* FollowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,7 +214,7 @@
 		4A744B9D2BCD3F0800FFA172 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				4A744B9E2BCD3F5000FFA172 /* FollowerCell.swift */,
+				4A744BD82BE4A3F900FFA172 /* FollowerCell */,
 				4A744BCB2BDA843E00FFA172 /* FavoriteCell.swift */,
 			);
 			path = Cells;
@@ -291,6 +293,15 @@
 			path = TabBarControllers;
 			sourceTree = "<group>";
 		};
+		4A744BD82BE4A3F900FFA172 /* FollowerCell */ = {
+			isa = PBXGroup;
+			children = (
+				4A744B9E2BCD3F5000FFA172 /* FollowerCell.swift */,
+				4A744BD92BE4A42100FFA172 /* FollowerView.swift */,
+			);
+			path = FollowerCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -361,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A744BDA2BE4A42100FFA172 /* FollowerView.swift in Sources */,
 				4A744B962BCD235200FFA172 /* User.swift in Sources */,
 				4A744B7F2BCBADF900FFA172 /* GFTextField.swift in Sources */,
 				4A744B852BCBC41B00FFA172 /* GFTitleLabel.swift in Sources */,
@@ -547,7 +559,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -579,7 +591,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

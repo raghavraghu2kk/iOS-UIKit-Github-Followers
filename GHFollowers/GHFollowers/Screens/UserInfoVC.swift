@@ -90,15 +90,17 @@ class UserInfoVC: GFDataLoadingVC {
     }
     
     func getUserInfo() {
-        NetworkManager.shared.getUser(for: username) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let user):
-                DispatchQueue.main.async { self.configureUIElements(with: user) }
-                
-            case .failure(let error):
-                self.presentGFAlertOnMainThread(title: "No User info!", message: error.rawValue, buttonTitle: "Ok")
-                break
+        
+        Task {
+            do {
+                let user = try await NetworkManager.shared.getUser(for: username)
+                configureUIElements(with: user)
+            } catch {
+                if let gfError = error as? GFError  {
+                    presentGFAlert(title: "Something went wrong", message: gfError.rawValue, buttonTitle: "Ok")
+                } else {
+                    presentDefaultError()
+                }
             }
         }
     }
@@ -128,7 +130,7 @@ extension UserInfoVC :  GFRepoItemVCDelegate {
         //        navigationController?.pushViewController(followerListVC, animated: true)
         
         guard user.followers != 0 else {
-            presentGFAlertOnMainThread(title: "No followers", message: "This user has no followers 🤓", buttonTitle: "So sad")
+            presentGFAlert(title: "No followers", message: "This user has no followers 🤓", buttonTitle: "So sad")
             return
         }
         delgate.didRquestFolloers(for: user.login)
@@ -141,7 +143,7 @@ extension UserInfoVC :  GFFollowerItemVCDelegate {
     
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
-            presentGFAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
+            presentGFAlert(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
             return
         }
         presentSafariVC(with: url)
